@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: license-plugin
+Version: 1.23
+Requires-Dist: requests (>=2.6.0)
+

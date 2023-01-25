@@ -1,0 +1,75 @@
+{
+  "name": "custom.remote.python.license",
+  "version": "1.23",
+  "type": "python",
+  "entity": "CUSTOM_DEVICE",
+  "metricGroup": "tech.Custom_Technology",
+  "processTypeNames": ["PYTHON"],
+  "technologies": ["Licensing"],
+  "favicon": "https://images-na.ssl-images-amazon.com/images/I/61abis-PINL.png",
+  "source": {
+    "package": "license_plugin",
+    "className": "LicensePluginRemote",
+    "install_requires": ["requests>=2.6.0"],
+    "activation": "Remote"
+  },
+  "metrics": [],
+  "properties" : [
+    {
+      "key": "api_key",
+      "type": "Password"
+    },
+    {
+      "key": "tenant_id",
+      "type": "String"
+    },
+    {
+      "key": "get_hu",
+      "type": "Boolean"
+    },
+    {
+      "key": "get_dem",
+      "type": "Boolean"
+    },
+    {
+      "key": "get_ddu",
+      "type": "Boolean"
+    }
+  ],
+  "configUI": {
+        "displayName": "License extension",
+        "properties": [
+        {
+          "key" : "tenant_id",
+          "displayName" :  "Tenant URL",
+          "displayHint": "Complete URL of the tenant where data is retrieved and written to once per hour. Managed: https://{your-domain}/e/{your-environment-id} SaaS: https://{your-environment-id}.live.dynatrace.com",
+          "displayOrder" : 1
+        },
+        {
+          "key" : "api_key",
+          "displayName" :  "API Token",
+          "displayHint": "Used to authenticate the calls. Required permissions: Read configuration, Write configuration, ReadMetrics, WriteMetrics, Ingest metrics and Read Entities",
+          "displayOrder" : 2
+        },
+        {
+          "key" : "get_hu",
+          "displayName" :  "Capture HostUnit and HostUnit Hour consumption",
+          "displayHint": "",
+          "displayOrder" : 3
+        },
+        {
+          "key" : "get_dem",
+          "displayName" :  "Capture DEM unit consumption",
+          "displayHint": "",
+          "displayOrder" : 4
+        },
+        {
+          "key" : "get_ddu",
+          "displayName" :  "Capture DDU consumption",
+          "displayHint": "",
+          "displayOrder" : 5
+        }
+	  ]
+    },
+    "ui": {}
+}
